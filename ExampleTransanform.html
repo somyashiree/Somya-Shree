@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            width: 100%;
+            height: 200px;
+            border: 2px solid red;
+            font-size: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        #span1{
+           animation-name: lb1;
+           animation-duration: 6s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           animation-direction: alternate-reverse;
+        }
+        #span2{
+            animation-name: lb2;
+           animation-duration: 6s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           animation-direction: alternate-reverse;
+           animation-delay: 6s; 
+           
+        }
+        #span3{
+            animation-name: lb3;
+           animation-duration: 6s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           animation-direction: alternate-reverse;
+        }
+        #span4{
+            animation-name: lb4;
+           animation-duration: 6s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           animation-direction: alternate-reverse; 
+           animation-delay: 6s;
+        }
+        #span5{
+            animation-name: lb5;
+           animation-duration: 6s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           animation-direction: alternate-reverse;
+        }
+        #span6{
+            animation-name: lb6;
+           animation-duration: 6s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           animation-direction: alternate-reverse;
+           animation-delay: 6s;
+        }
+        @keyframes lb1 {
+            from{ 
+                position: absolute;
+                transform: translate(0px,0px);
+            }
+                to{ 
+                    position: absolute;
+                    transform: translate(0px,150px) scale(2);
+                    color: red;
+                }
+            }
+        
+                @keyframes lb2 {
+            from{ 
+                position: absolute;
+                transform: translate(50px,0px);
+            }
+                to{ 
+                    position: absolute;
+                    transform: translate(50px,150px) scale(2);
+                    color: black;
+                }
+                    }
+                @keyframes lb3 {
+            from{ 
+                position: absolute;
+                transform: translate(100px,0px);
+            }
+                to{ 
+                    position: absolute;
+                    transform: translate(100px,150px) scale(2);
+                    color: aqua;
+                }
+            }
+        @keyframes lb4 {
+            from{ 
+                position: absolute;
+                transform: translate(150px,0px);
+            }
+                to{ 
+                    position: absolute;
+                    transform: translate(150px,150px)scale(2);
+                    color: blueviolet;
+                }
+            }
+        @keyframes lb5 {
+            from{ 
+                position: absolute;
+                transform: translate(200px,0px);
+            }
+                to{ 
+                    position: absolute;
+                    transform: translate(200px,150px)scale(2);
+                    color: brown;
+                }
+            }
+        @keyframes lb6 {
+            from{ 
+                position: absolute;
+                transform: translate(250px,0px);
+            }
+                to{ 
+                    position: absolute;
+                    transform: translate(250px,150px)scale(2);
+                    color: chartreuse;
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <!--transform properties
+        1.translate
+        2.scale
+        3.rotate
+        4.skew
+    -->
+    <div class="title">
+        <span id="span1">h</span>
+        <span id="span2">u</span>
+        <span id="span3">b</span>
+        <span id="span4">n</span>
+        <span id="span5">e</span>
+        <span id="span6">t</span>
+    </div>    
+    
+</body>
+</html>

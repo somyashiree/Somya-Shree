@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width:300px;
+            height:300px;
+            border:15px dotted red;
+            border-radius:50%;
+            position:relative;
+            top:100px;
+            left:200px;
+            animation-name:myani;
+            animation-duration:20s;
+            animation-timing-function:linear;
+            animation-iteration-count:infinite;
+        }
+        #fsd5{
+            position: relative;
+            top: 80px;
+            left: 50px;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            letter-spacing: 10px;
+            font-size: 100px;
+        }
+        .child{
+            height:60px;
+            width:60px;
+            border:15px dotted blue;
+            border-radius:50%;
+            animation-name:yourani;
+            animation-duration:20s;
+            animation-timing-function:linear;
+            animation-iteration-count:infinite;
+
+        }
+        #child1{
+            position: relative;
+            top: -230px;
+            left: 120px;
+        }
+        #child2{
+            position: relative;
+            top: -127px;
+            left: 305px;
+        }
+        #child3{
+            position: relative;
+            top: -250px;
+            right: 98px;
+        }
+        #child4{
+            position: relative;
+            top: -145px;
+            left: 106px;
+        }
+        #fsd1{
+            position: relative;
+            z-index: 2;
+            top: -275px;
+            left: 145px;
+            font-weight: bold;
+        }
+        #fsd2{
+            position: relative;
+            top: -180px;
+            left: 335px;
+            font-weight: bold;
+        }
+        #fsd3{
+            position: relative;
+            z-index: 2;
+            top: -100px;
+            left: 145px;
+            font-weight: bold;
+        }
+        #fsd4{
+            position: relative;
+            top: -400px;
+            right: 75px;
+            font-weight: bold;
+        }
+        @keyframes myani{
+            from{
+                transform:rotate(360deg);
+                background-color:orange;
+            }
+            to{
+                transform:rotate(-360deg);
+                background-color:red;
+            }
+
+        }
+        @keyframes yourani{
+            from{
+                transform:rotate(360deg);
+                background-color:beige;
+            }
+            to{
+                transform:rotate(-360deg);
+                background-color: chocolate;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <span class="fsd" id="fsd5">FSD</span>
+        <div class="child" id="child1"></div>
+        <span class="fsd" id="fsd1">HTML</span>
+        <div class="child" id="child2"></div>
+        <span class="fsd" id="fsd2">CSS</span>
+        <div class="child" id="child3"></div>
+        <span class="fsd" id="fsd3">JS</span>
+        <div class="child" id="child4"></div>
+        <span class="fsd" id="fsd4">PHP</span>
+
+    </div>
+    
+</body>
+</html>

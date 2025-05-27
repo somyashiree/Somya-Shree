@@ -1,0 +1,231 @@
+<!-- today we will learn about transform properties of css
+
+list of transform properties:- 
+    1. translate :- shift the element toward left right or bottom
+    2. scale :- scaleup (to make it big ) or scaledown(to make it small) the element
+    3. skew :- skew the element
+    4. rotate :- rotate the element 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .con{
+            width: 500px;
+            height: 500px;
+            border: 2px solid red;
+            position: relative;
+            top: 50px;
+            left: 100px;
+        }
+        .child{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            animation-name: move;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+
+        }
+        
+
+        @keyframes move {
+            0%{
+                transform: translate(0px,0px);
+            }
+            25%{
+                transform: translate(420px,0px);
+                background-color: brown;
+            }
+            50%{
+                transform: translate(420px,420px);
+                background-color: green;
+            }
+            75%{
+                transform: translate(0px,420px);
+                background-color: black;
+            }
+            100%{
+                transform: translate(0px,0px);
+                background-color: blueviolet;
+            }
+        }
+
+        .c2{
+            display:block;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            animation-name:movei;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes movei {
+            10%{
+                display: block;
+                transform: translate(0px,0px);
+            }
+            25%{
+                transform: translate(420px,320px);
+                background-color: brown;
+                display: block;
+            }
+            50%{
+                transform: translate(420px,0px);
+                background-color: green;
+                display: block;
+            }
+            75%{
+                transform: translate(0px,0px);
+                background-color: black;
+                display: block;
+            }
+            100%{
+                transform: translate(0px,320px);
+                background-color: blueviolet;
+                display: block;
+            }
+            
+        }
+
+        .conn{
+            width: 500px;
+            height: 500px;
+            border: 2px solid red;
+            position: relative;
+            top: 100px;
+            left: 100px;
+            border-radius: 50%;
+            animation-name:movein;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        
+        @keyframes movein {
+            from{
+                transform: rotate(360deg);
+                background-color: blueviolet;
+            }
+            to{
+                transform: rotate(-360deg);
+                background-color: blue;
+            }
+        } 
+        
+
+        .c3{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border: 2px solid red;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 80px;
+            left: 200px;
+            top: -85px;
+            animation-name:moveim;
+            animation-duration: 50s;
+            animation-iteration-count: infinite;
+        }
+
+         @keyframes moveim {
+            from{
+                transform: rotate(360deg);
+                background-color: blueviolet;
+            }
+            to{
+                transform: rotate(-360deg);
+                background-color: blue;
+            }
+        } 
+
+        .c4{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border: 2px solid red;
+            border-radius: 50%;
+            left: 500px;
+            top: 75px;
+            text-align: center;
+            line-height: 80px;
+            animation-name:moveim;
+            animation-duration: 50s;
+            animation-iteration-count: infinite;
+        }
+
+        .c5{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border: 2px solid red;
+            border-radius: 50%;
+            right: 80px;
+            text-align: center;
+            line-height: 80px;
+            animation-name:moveim;
+            animation-duration: 50s;
+            animation-iteration-count: infinite;
+        }
+
+        .c6{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border: 2px solid red;
+            border-radius: 50%;
+            left: 200px;
+            top: 250px;
+            text-align: center;
+            line-height: 80px;
+            animation-name:moveim;
+            animation-duration: 50s;
+            animation-iteration-count: infinite;
+        }
+
+        #head2{
+            position: relative;
+            color: black;
+            font-weight: bold;
+            font-size: 30px;
+            left: 160px;
+            top: 350px;
+            z-index: 100;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- <div class="con">
+        <div class="child">
+
+        </div>
+        <div class="c2"></div>
+    </div> -->
+    <!-- <div class="con" style="text-align: center;line-height: 500px;">
+        <span class="cc" id="cc1">H</span>
+        <span class="cc" id="cc2">U</span>
+        <span class="cc" id="cc3">B</span>
+        <span class="cc" id="cc4">N</span>
+        <span class="cc" id="cc5">E</span>
+        <span class="cc" id="cc6">T</span>
+    </div> -->
+    <span id="head2">WEBSITE DEVLOPMENT</span>
+    <div class="conn">
+        <div class="c3">HTML</div>
+        <div class="c4">CSS</div>
+        <div class="c5">JS</div>
+        <div class="c6">PHP</div>
+    </div>
+</body>
+</html>

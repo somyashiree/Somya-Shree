@@ -1,0 +1,46 @@
+.box{
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid blue;
+    cursor: pointer;
+    transition: all;
+    animation-name: myani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate; 
+}
+.box:hover0{
+    width: 400px;
+    background-color:lightgreen;
+
+@keyframes myani{
+    0%{
+      width:200px;
+      background-color:blue;
+      25%{
+        width: 250px;
+        background-color:green;
+
+      } 
+      50%{
+        width:300px;
+        background-color:orange;
+
+      } 
+      75%{
+        width:350px;
+        background-color:red;
+
+      } 
+      100%{
+        width: 400px;
+        background-color:red;
+      }
+
+    }
+}
+
+
+}

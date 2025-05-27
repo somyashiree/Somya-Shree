@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .con{
+            width:99%;
+            height:600px;
+            border:3px solid red;
+            display: flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+            justify-content:space-evenly;
+            align-items:center;
+            /* row-gap:50px; */
+        
+        }
+        .child{
+            background-color: lightblue;
+            height:280px;
+            border:2px outset;
+            flex-basis:23%;
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow:5px 10px;
+
+        }
+        img{
+            width:70px;
+            height:70px;
+            border-radius:50%;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            border-radius: 30px;
+            margin-top: 20px;
+        }
+        .child:hover{
+            background-color: black;
+            color:white
+        }
+        .child img {
+            background-color: white;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="child" id="child-1">
+            <img src="HTML.webp" alt="">
+            <h1>html</h1>
+            <p>HTML, which stands for Hypertext Markup Language, is a standard markup language used to structure and display content on the internet.</p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="child" id="child-2">
+            <img src="c.webp" alt="">
+            <h1>c</h1>
+            <p>C is a general-purpose programming language that is known for its efficiency and direct manipulation of hardware and memory, making it particularly suitable for system-level programming.</p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="child" id="child-3">
+            <img src="C++.webp" alt="">
+            <h1>c++</h1>
+            <p>C++ is a high-level, general-purpose programming language created to extend the C programming language, adding object-oriented (OOP) features.</p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="child" id="child-4">
+            <img src="CSS.webp" alt="">
+            <h1>css</h1>
+            <p>Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML.</p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="child" id="child-5">
+            <img src="Java.webp" alt="">
+            <h1>java</h1>
+            <p>Java is a high-level, general-purpose, object-oriented programming language designed for building applications that can run on any platform without modification.</p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="child" id="child-6">
+            <img src="JavaScript-Logo-500x313.webp" alt="">
+            <h1>java-script</h1>
+           <p>JavaScript is a dynamic computer programming language that is widely used for adding interactive elements to web pages.</p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="child" id="child-7">
+            <img src="python.webp" alt="">
+            <h1>python</h1>
+            <p>Python is a high-level, general-purpose programming language designed to emphasize code readability with the use of significant indentation.</p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="child" id="child-8">
+             <img src="Swift.webp" alt="">
+            <h1>swift</h1>
+            <p>Swift is a powerful and intuitive language developed by Apple for iOS, macOS, and other Apple platforms.</p>
+            <button class="btn">Read More</button>
+        </div>
+       </div>
+    
+</body>
+</html>

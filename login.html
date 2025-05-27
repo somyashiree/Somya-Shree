@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video and Image Controls</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Video and Image Display with Controls</h1>
+        <div class="media-container">
+            <video id="myVideo" width="480" height="270" controls>
+                <source src="sample-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <img id="myImage" src="sample-image.jpg" alt="Sample Image" width="480" height="270" />
+        </div>
+        <div class="controls">
+            <button id="playBtn">Play Video</button>
+            <button id="pauseBtn">Pause Video</button>
+            <button id="resumeBtn">Resume Video</button>
+            <button id="scrollDownBtn">Scroll Down</button>
+            <button id="scrollUpBtn">Scroll Up</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>

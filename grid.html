@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .con{
+            border: 3px inset red;
+            width: 90%;
+            height: 600px;
+            margin-top: 10px;
+            margin-left: 30px;
+            display: grid;
+            grid-template-columns:1fr, 1fr, 1fr, 1fr;
+        }
+        .child{
+            border: 2px solid gray;
+            margin: 5px;
+            text-align: center;
+            line-height: 130px;
+        }
+        #child-1{
+            grid-column-start:1;
+            grid-column-end:4;
+        }
+        #child-2{
+            grid-column-start:2;
+            grid-column-end:4;
+        }
+        #child-3{
+            grid-column-start:2;
+            grid-column-end:4;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="child" id="child-1">navbar</div>
+        <div class="child" id="child-2">sidebar</div>
+        <div class="child" id="child-3">content-1</div>
+        <div class="child" id="child-4">content-2</div>
+        <div class="child" id="child-5">content-3</div>
+        <div class="child" id="child-6">footer</div>
+
+
+
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rotating Cube</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    perspective: 800px;
+  }
+  .scene {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateY 5s linear infinite;
+  }
+  .cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  .face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(145deg, rgba(0, 150, 255, 0.9), rgba(0, 100, 200, 0.7));
+    border: 2px solid #0ff;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.3), 0 0 15px rgba(0, 255, 255, 0.6);
+    border-radius: 8px;
+  }
+  .face.front  { transform: translateZ(100px); }
+  .face.back   { transform: rotateY(180deg) translateZ(100px); }
+  .face.right  { transform: rotateY(90deg) translateZ(100px); }
+  .face.left   { transform: rotateY(-90deg) translateZ(100px); }
+  .face.top    { transform: rotateX(90deg) translateZ(100px); }
+  .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+  @keyframes rotateY {
+    from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    to   { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+  }
+  </style>
+  <!-- <style>
+    /* Clouds container */
+    .clouds {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 400px;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Individual cloud */
+    .cloud {
+      position: absolute;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 70%);
+      border-radius: 50% / 50%;
+      opacity: 0.8;
+      animation: floatClouds 20s linear infinite;
+    }
+    .cloud1 {
+      width: 120px;
+      height: 60px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    .cloud2 {
+      width: 100px;
+      height: 50px;
+      top: 50%;
+      left: 70%;
+      animation-delay: 5s;
+    }
+    .cloud3 {
+      width: 140px;
+      height: 70px;
+      top: 70%;
+      left: 40%;
+      animation-delay: 10s;
+    }
+    @keyframes floatClouds {
+      0% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(20px, 10px, 0); }
+      100% { transform: translate3d(0, 0, 0); }
+    }
+  </style>
+  <style>
+    /* Canvas for clouds */
+  #cloudCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      transform: none;
+      z-index: -1;
+      pointer-events: none;
+      background: transparent;
+    }
+  </style> -->
+</head>
+<body>
+  <!-- <canvas id="cloudCanvas"></canvas> -->
+  <div class="scene">
+    <div class="cube">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face right"></div>
+      <div class="face left"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+  </div>
+  <script>
+    // const canvas = document.getElementById('cloudCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+    });
+
+    let width = canvas.width;
+    let height = canvas.height;
+
+    // Cloud particle class
+    // class CloudParticle {
+      // constructor(x, y, radius, speed, alpha) {
+        // this.x = x;
+        // this.y = y;
+        // this.radius = radius;
+        // this.speed = speed;
+        // this.alpha = alpha;
+      // }
+      // update() {
+        // this.x += this.speed;
+        // if (this.x - this.radius > width) {
+          // this.x = -this.radius;
+          // this.y = Math.random() * height * 0.6;
+        // }
+      // }
+      // draw(ctx) {
+        // const gradient = ctx.createRadialGradient(this.x, this.y, this.radius * 0.3, this.x, this.y, this.radius * 1.5);
+        // gradient.addColorStop(0, `rgba(255,255,255,${this.alpha})`);
+        // gradient.addColorStop(1, 'rgba(255,255,255,0)');
+        // ctx.fillStyle = gradient;
+        // ctx.beginPath();
+        // ctx.ellipse(this.x, this.y, this.radius * 1.5, this.radius, 0, 0, Math.PI * 2);
+        // ctx.fill();
+      // }
+    // }
+
+    // Create cloud particles with more depth variation
+    // const particles = [];
+    // function createParticles() {
+      // particles.length = 0;
+      // width = canvas.width;
+      // height = canvas.height;
+      // for (let i = 0; i < 80; i++) {
+        // const radius = 20 + Math.random() * 60;
+        // const x = Math.random() * width;
+        // const y = Math.random() * height * 0.7;
+        // const speed = 0.1 + Math.random() * 0.4;
+        // const alpha = 0.3 + Math.random() * 0.7;
+        // particles.push(new CloudParticle(x, y, radius, speed, alpha));
+      // }
+    // }
+    // createParticles();
+
+    // Animation loop
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw(ctx);
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      createParticles();
+    });
+  </script>
+</body>
+</html>
